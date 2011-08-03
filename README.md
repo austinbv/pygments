@@ -1,18 +1,19 @@
-== Welcome
+## Welcome ##
 
-http://pygments.appspot.com is an unofficial API for the Pygments syntax highlighting library, version 1.2.
-It's designed to provide syntax highlighting for web applications that don't have Python installed. 
+http://pygments-1-4.appspot.com is an unofficial API for the Pygments syntax highlighting library, version 1.4.
+It's designed to provide syntax highlighting for web applications that don't have Python installed.
 
-== Usage
+The origional was forked from trevorturk and updated to work with newer versions of Pygments.
 
-POST to http://pygments.appspot.com with "lang" and "code" parameters in the body. 
+## Usage ##
+
+POST to http://pygments-1-4.appspot.com with "lang" and "code" parameters in the body.
 You'll receive pygmentized HTML back, which you can store for later display on your site.
-You can style the pygmentized HTML using CSS like this: http://github.com/trevorturk/pygments/blob/master/default.css
+You can style the pygmentized HTML using CSS like this: http://github.com/austinbv/pygments/blob/master/default.css
 
-== Ruby Example
+## Ruby Example ##
 
-$ irb
-
+```ruby
 require 'net/http'
 require 'uri'
 
@@ -21,19 +22,20 @@ code = 'print "Hello World"'
 
 request = Net::HTTP.post_form(URI.parse('http://pygments.appspot.com/'), {'lang'=>lang, 'code'=>code})
 puts request.body
+```
 
-== More Information
+## More Information ##
 
 This site was created so that http://flowcoder.com could run on http://heroku.com, but please feel free to use it yourself.
-If you like, you can fork the code on github and create your own Google App Engine site, though. 
+If you like, you can fork the code on github and create your own Google App Engine site, though.
 
-Visit http://pygments.org/ for more information about Pygments. 
+Visit http://pygments.org/ for more information about Pygments.
 Visit http://github.com/richleland/pygments-css for more example CSS files for use with Pygments.
-Visit http://github.com/trevorturk/pygments for more information about this site, and to see the source code. 
+Visit http://github.com/trevorturk/pygments for more information about this site, and to see the source code.
 
 See also: http://www.hilite.me/ for a similar application with more options.
 
-== MIT License
+## MIT License ##
 
 Copyright (c) 2009 Trevor Turk
 

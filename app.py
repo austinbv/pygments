@@ -8,7 +8,7 @@ from pygments.formatters import HtmlFormatter
 class App(webapp.RequestHandler):
   def get(self):
     self.response.headers['Content-Type'] = 'text/plain'
-    self.response.out.write(open('README', 'r').read())
+    self.response.out.write(open('README.md', 'r').read())
   def post(self):
     self.response.headers['Content-Type'] = 'text/plain'
     self.response.out.write(pygmentize(self.request.get("lang"), self.request.get("code")))
